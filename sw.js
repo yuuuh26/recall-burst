@@ -1,4 +1,4 @@
-const VERSION = '1.1.0';
+const VERSION = '1.1.0-r1';
 const PREFIX = 'yuu-recall-burst-v';
 const CACHE = PREFIX + VERSION;
 const ASSETS = [
@@ -35,7 +35,7 @@ const ASSETS = [
 ];
 self.addEventListener('install', event => {
   // Do not skipWaiting: an in-progress game keeps its current app version.
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS.map(path => new Request(path, {cache: 'reload'})))));
 });
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
