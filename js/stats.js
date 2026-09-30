@@ -1,0 +1,2 @@
+export function summarize(records){const counts={PERFECT:0,GREAT:0,GOOD:0,MISS:0};for(const r of records)counts[r.grade]++;return {...counts,accuracy:records.length?Math.round(100*(records.length-counts.MISS)/records.length):0};}
+export function masteryCounts(questions,stats,direction='forward'){const map=new Map(stats.map(s=>[s.id,s]));return questions.reduce((a,q)=>{const key=map.get(`${q.id}:${direction}`)?.mastery??'NEW';a[key]++;return a;},{NEW:0,LEARNING:0,FAMILIAR:0,MASTERED:0});}

@@ -1,0 +1,33 @@
+{
+  "id": "/recall-burst/",
+  "name": "RECALL BURST",
+  "short_name": "RECALL BURST",
+  "description": "思い出すたび、記憶がバースト。小春と遊ぶ暗記ゲーム。",
+  "lang": "ja",
+  "start_url": "/recall-burst/",
+  "scope": "/recall-burst/",
+  "display": "standalone",
+  "background_color": "#0a1020",
+  "theme_color": "#0a1020",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
