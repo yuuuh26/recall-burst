@@ -1,4 +1,4 @@
-const VERSION = '1.0.0';
+const VERSION = '1.0.0-r2';
 const PREFIX = 'yuu-recall-burst-v';
 const CACHE = PREFIX + VERSION;
 const ASSETS = [
