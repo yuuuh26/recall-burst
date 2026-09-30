@@ -1,4 +1,4 @@
-const VERSION = '1.1.0-r1';
+const VERSION = '1.1.0-r2';
 const PREFIX = 'yuu-recall-burst-v';
 const CACHE = PREFIX + VERSION;
 const ASSETS = [
@@ -58,3 +58,6 @@ self.addEventListener('fetch', event => {
     }
   })());
 });
+
+// Only the dedicated update page requests immediate activation after a tap.
+self.addEventListener('message', event => {if(event.data?.type==='APPLY_UPDATE')event.waitUntil(self.skipWaiting());});

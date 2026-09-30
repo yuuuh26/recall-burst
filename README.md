@@ -26,9 +26,9 @@ Android Chromeの「ホーム画面に追加」からインストール。初回
 
 - IndexedDB: `yuu-recall-burst`
 - Service Worker scope: `/recall-burst/`
-- Cache: `yuu-recall-burst-v1.1.0-r1`
+- Cache: `yuu-recall-burst-v1.1.0-r2`
 - 他PWAのキャッシュは削除しません。
-- 更新時はapp.jsのバージョン表示を決めるconfig.js、package.json、sw.jsのVERSIONを更新。待機中のSWは全タブを閉じて次回起動した際に切り替わります。
+- 更新時はapp.jsのバージョン表示を決めるconfig.js、package.json、sw.jsのVERSIONを更新。待機中のSWは全タブを閉じて次回起動した際に切り替わります。以前の版が表示される場合は `update.html` を開き、プレイ終了後に「最新バージョンに更新する」をタップ。IndexedDBは削除しません。
 
 ## キャラクター
 
