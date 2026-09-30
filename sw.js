@@ -1,4 +1,4 @@
-const VERSION = '1.0.0-r3';
+const VERSION = '1.1.0';
 const PREFIX = 'yuu-recall-burst-v';
 const CACHE = PREFIX + VERSION;
 const ASSETS = [
@@ -9,6 +9,7 @@ const ASSETS = [
   "./manifest.webmanifest",
   "./data/seed.json",
   "./js/characters.js",
+  "./js/speech.js",
   "./js/effects.js",
   "./js/stats.js",
   "./js/audio.js",
@@ -29,7 +30,8 @@ const ASSETS = [
   "./assets/avatars/koharu/clear.webp",
   "./assets/avatars/koharu/fever.webp",
   "./assets/avatars/koharu/master.webp",
-  "./assets/avatars/koharu/happy.webp"
+  "./assets/avatars/koharu/happy.webp",
+  "./assets/avatars/koharu/cheer.webp"
 ];
 self.addEventListener('install', event => {
   // Do not skipWaiting: an in-progress game keeps its current app version.

@@ -12,6 +12,8 @@ AI追加用の最小例：
     "deckId": "my-deck",
     "prompt": "架空の部署",
     "answer": "正しい担当者",
+    "promptLang": "ja-JP",
+    "answerLang": "ja-JP",
     "choices": ["誤答A", "誤答B", "誤答C"],
     "note": "記憶のヒント",
     "tags": ["人名"],
@@ -25,7 +27,8 @@ AI追加用の最小例：
 - 正解はanswer。choicesに含めなくても構いません。正解と重複する候補は4択生成時に除外します。
 - 候補が少ない時はジャンル内の有効な他問題から補完。不足時は開始前に通知しRecallへ切り替えできます。
 - 逆方向の4択は問題文を選択肢にするため、異なる問題文を4つ以上登録してください。
-- 任意項目：note / enabled / tags / difficulty / category / createdAt / updatedAt。
+- 読み上げ言語：`promptLang`は問題文、`answerLang`は正解（逆方向で使用）。`ja-JP`、`en-US`、`zh-CN`、`fr-FR`などの言語タグ、または`auto`。省略も自動判定です。漢字だけの中国語・英語以外のアルファベットは明示してください。旧JSONは引き続き読み込めます。
+- 任意項目：promptLang / answerLang / note / enabled / tags / difficulty / category / createdAt / updatedAt。
 - 保存日時の省略時には取り込み時刻を補完します。
 - 全体20MBまで。問題・ジャンル等の各配列10万項目まで。
 
