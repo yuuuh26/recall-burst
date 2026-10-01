@@ -26,7 +26,7 @@ Android Chromeの「ホーム画面に追加」からインストール。初回
 
 - IndexedDB: `yuu-recall-burst`
 - Service Worker scope: `/recall-burst/`
-- Cache: `yuu-recall-burst-v1.2.0-r2`
+- Cache: `yuu-recall-burst-v1.2.0`
 - 他PWAのキャッシュは削除しません。
 - 更新時はapp.jsのバージョン表示を決めるconfig.js、package.json、sw.jsのVERSIONを更新。待機中のSWは全タブを閉じて次回起動した際に切り替わります。以前の版が表示される場合は `update.html` を開き、プレイ終了後に「最新バージョンに更新する」をタップ。IndexedDBは削除しません。
 
@@ -34,7 +34,7 @@ Android Chromeの「ホーム画面に追加」からインストール。初回
 
 アプリ内の人物キャラクターはAI生成による架空のキャラクターです。実在の人物とは関係ありません。
 
-提供された小春の基準画像を使用。同じ人物・眼鏡・髪・服を保って、明るい笑顔、大喜び、応援ポーズの画像を生成して追加。スコアが500点・1200点へ伸びるほど出題中の笑顔も強まり、5 COMBOと6問ごとの出題で応援ポーズを表示します。FEVERとCLEARは大喜びの画像を使用。別表情へ差し替えるには `assets/avatars/koharu/{neutral,smile,happy,delight,fever,cheer,miss,clear}.webp` を置換してください。画像変更時にもSWのVERSIONを更新します。キャラクター定義は `js/characters.js` に分離しています。
+提供された小春の基準画像を使用。同じ人物・眼鏡・髪・服を保って、明るい笑顔、大喜び、応援ポーズの画像を生成して追加。スコアが500点・1200点へ伸びるほど出題中の笑顔も強まり、5 COMBOでは拍手、6問ごとの出題では応援ポーズを表示します。FEVER中もウインク・拍手・笑顔・大喜びが変化します。CLEARは大喜びの画像を使用。別表情へ差し替えるには `assets/avatars/koharu/{neutral,smile,happy,delight,fever,cheer,wink,clap,laugh,miss,clear}.webp` を置換してください。画像変更時にもSWのVERSIONを更新します。キャラクター定義は `js/characters.js` に分離しています。
 
 ## 読み上げ
 
