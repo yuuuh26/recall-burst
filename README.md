@@ -1,4 +1,4 @@
-# RECALL BURST v1.1.0
+# RECALL BURST v1.2.0
 
 思い出すたび、記憶がバースト。小春のリアクション、COMBO、RECALL FEVERを楽しみながら繰り返す暗記ゲーム。
 
@@ -26,7 +26,7 @@ Android Chromeの「ホーム画面に追加」からインストール。初回
 
 - IndexedDB: `yuu-recall-burst`
 - Service Worker scope: `/recall-burst/`
-- Cache: `yuu-recall-burst-v1.1.0-r2`
+- Cache: `yuu-recall-burst-v1.2.0-r2`
 - 他PWAのキャッシュは削除しません。
 - 更新時はapp.jsのバージョン表示を決めるconfig.js、package.json、sw.jsのVERSIONを更新。待機中のSWは全タブを閉じて次回起動した際に切り替わります。以前の版が表示される場合は `update.html` を開き、プレイ終了後に「最新バージョンに更新する」をタップ。IndexedDBは削除しません。
 
@@ -81,3 +81,12 @@ python3 -m http.server 8000 --directory ..
 `http://localhost:8000/recall-burst/` を開きます。index.htmlのファイル直接実行はES Modules / IndexedDB / SWの検証対象外です。npm依存パッケージはありません。
 
 確認結果と未確認事項は `docs/verification.md` を参照してください。
+
+## v1.2.0
+
+- MachiTalkと同じ振れ幅のゆっくりした揺らぎ。ホーム・ゲームに常時表示し、正解アニメーションとは別の層で動きます。一時停止・非表示・reduced motionでは停止。
+- 正解数・スコア・コンボ・連続PERFECTで笑顔、ウインク、拍手、大喜び、応援ポーズが変化。FEVER中も複数の表情を使用。
+- TOEIC BEATの元データ500語を移植。全語/LEVEL 1〜5（100語ずつ）を選択。既存の端末内データを保持したまま一度だけ追加。
+- 新しいジャンルは「新しい問題集を作る」から追加、または設定でAI編集用JSONをインポート。内蔵パックも汎用レジストリで拡張できます。
+
+[移植元とデータ保持方針](docs/toeic-source.md) / [追加画像のプロンプト](docs/character-prompts-v1.2.md)

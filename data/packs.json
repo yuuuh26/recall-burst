@@ -1,0 +1,13 @@
+[
+  {
+    "id": "toeic-beat-500-v1",
+    "path": "./data/toeic-beat.json",
+    "format": "toeic-beat",
+    "source": {
+      "repository": "yuuuh26/toeic-beat",
+      "commit": "1df60ed437ca03e6681c866f8435a959557df972",
+      "file": "words.json",
+      "blob": "e25015606b428fa65761fc2fadb4b150800e26f5"
+    }
+  }
+]

@@ -26,6 +26,13 @@ export function scheduleRetry(queue,index,question,retried,rng=Math.random){if(r
 }
 export function makeChoices(q,pool,direction='forward'){
  const answer=direction==='reverse'?q.prompt:q.answer;
+ if(q.sourceApp==='toeic-beat'&&q.sourceData){
+  const source=q.sourceData;const seen=new Set([answer,...(direction==='reverse'?source.synonyms:source.excludeMeanings)]);
+  const eligible=shuffle(pool.filter(x=>x.enabled!==false&&x.id!==q.id&&x.sourceApp===q.sourceApp&&x.sourceData?.partOfSpeech===source.partOfSpeech&&!(source.synonyms??[]).includes(x.prompt)&&!(source.excludeMeanings??[]).includes(x.answer)&&(direction!=='reverse'||x.answer!==q.answer)))
+   .sort((a,b)=>Number(b.category===q.category)-Number(a.category===q.category));
+  const distractors=[];for(const x of eligible){const value=direction==='reverse'?x.prompt:x.answer;if(value&&!seen.has(value)){seen.add(value);distractors.push(value);if(distractors.length===3)break;}}
+  return distractors.length===3?shuffle([answer,...distractors]):null;
+ }
  const provided=direction==='reverse'?[]:(q.choices??[]);
  const candidates=[...new Set([...provided,...pool.filter(x=>x.enabled!==false&&x.id!==q.id).map(x=>direction==='reverse'?x.prompt:x.answer)])].filter(x=>x&&x!==answer);
  if(candidates.length<3)return null;return shuffle([answer,...shuffle(candidates).slice(0,3)]);

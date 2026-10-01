@@ -1,4 +1,4 @@
-export const VERSION = '1.1.0';
+export const VERSION = '1.2.0';
 export const SCHEMA_VERSION = 1;
 export const DB_NAME = 'yuu-recall-burst';
 export const STORES = ['decks','questions','questionStats','sessions','settings','characters','appMeta'];
